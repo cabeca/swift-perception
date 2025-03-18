@@ -44,11 +44,21 @@
     }
 
     /// Creates a bindable object from an observable object.
+    @available(iOS, introduced: 13, obsoleted: 17, message: "Use @Bindable without the 'Perception.' prefix.")
+    @available(macOS, introduced: 10.15, obsoleted: 14, message: "Use @Bindable without the 'Perception.' prefix.")
+    @available(tvOS, introduced: 13, obsoleted: 17, message: "Use @Bindable without the 'Perception.' prefix.")
+    @available(watchOS, introduced: 6, obsoleted: 10, message: "Use @Bindable without the 'Perception.' prefix.")
+    @available(visionOS, unavailable)
     public init(wrappedValue: Value) where Value: AnyObject & Perceptible {
       self.observer = Observer(wrappedValue)
     }
 
     /// Creates a bindable object from an observable object.
+    @available(iOS, introduced: 13, obsoleted: 17, message: "Use @Bindable without the 'Perception.' prefix.")
+    @available(macOS, introduced: 10.15, obsoleted: 14, message: "Use @Bindable without the 'Perception.' prefix.")
+    @available(tvOS, introduced: 13, obsoleted: 17, message: "Use @Bindable without the 'Perception.' prefix.")
+    @available(watchOS, introduced: 6, obsoleted: 10, message: "Use @Bindable without the 'Perception.' prefix.")
+    @available(visionOS, unavailable)
     public init(_ wrappedValue: Value) where Value: AnyObject & Perceptible {
       self.init(wrappedValue: wrappedValue)
     }
