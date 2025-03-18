@@ -21,6 +21,11 @@
     @ObservedObject fileprivate var observer: Observer<Value>
 
     /// The wrapped object.
+    @available(iOS, introduced: 13, obsoleted: 17, message: "Use @Bindable without the 'Perception.' prefix.")
+    @available(macOS, introduced: 10.15, obsoleted: 14, message: "Use @Bindable without the 'Perception.' prefix.")
+    @available(tvOS, introduced: 13, obsoleted: 17, message: "Use @Bindable without the 'Perception.' prefix.")
+    @available(watchOS, introduced: 6, obsoleted: 10, message: "Use @Bindable without the 'Perception.' prefix.")
+    @available(visionOS, unavailable)
     public var wrappedValue: Value {
       get { self.observer.object }
       set { self.observer.object = newValue }
@@ -38,6 +43,11 @@
     }
 
     /// Returns a binding to the value of a given key path.
+    @available(iOS, introduced: 13, obsoleted: 17, message: "Use @Bindable without the 'Perception.' prefix.")
+    @available(macOS, introduced: 10.15, obsoleted: 14, message: "Use @Bindable without the 'Perception.' prefix.")
+    @available(tvOS, introduced: 13, obsoleted: 17, message: "Use @Bindable without the 'Perception.' prefix.")
+    @available(watchOS, introduced: 6, obsoleted: 10, message: "Use @Bindable without the 'Perception.' prefix.")
+    @available(visionOS, unavailable)
     public subscript<Subject>(
       dynamicMember keyPath: ReferenceWritableKeyPath<Value, Subject>
     ) -> Binding<Subject> where Value: AnyObject {
